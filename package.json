@@ -1,0 +1,28 @@
+{
+  "name": "svg-icon-library-starter",
+  "version": "1.0.0",
+  "description": "Starter project to build an SVG icon library",
+  "main": "index.js",
+  "scripts": {
+    "commit": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kreuzerk/svg-icon-library-starter.git"
+  },
+  "keywords": [
+    "SVG",
+    "icons",
+    "library",
+    "starter"
+  ],
+  "author": "Kevin Kreuzer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kreuzerk/svg-icon-library-starter/issues"
+  },
+  "homepage": "https://github.com/kreuzerk/svg-icon-library-starter#readme",
+  "devDependencies": {
+    "git-cz": "^4.7.1"
+  }
+}
