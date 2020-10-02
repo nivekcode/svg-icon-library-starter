@@ -1,5 +1,5 @@
 import { completeIconSet } from '../dist/index';
-console.log('Complete set', completeIconSet);
+
 function buildIconCard(icon) {
     const iconCard = document.createElement('div');
     iconCard.classList.add('icon-card');
