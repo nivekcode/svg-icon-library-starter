@@ -7,7 +7,8 @@
     "commit": "git-cz",
     "serve": "npm-run-all -p watch-showcase serve-html",
     "serve-html": "http-server ./showcase -o",
-    "watch-showcase": "tsc-bundle showcase/main.ts --watch"
+    "watch-showcase": "tsc-bundle showcase/main.ts --watch",
+    "generate-icons": "svg-to-ts"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,22 @@
   "devDependencies": {
     "git-cz": "^4.7.1",
     "npm-run-all": "^4.1.5",
+    "svg-to-ts": "^5.2.0",
     "typescript": "^4.0.3",
     "typescript-bundle": "^1.0.16"
+  },
+  "svg-to-ts": {
+    "conversionType": "files",
+    "srcFiles": [
+      "./svg-icons/**/*.svg"
+    ],
+    "outputDirectory": "./generated-icons",
+    "interfaceName": "MyIcon",
+    "typeName": "myIcon",
+    "prefix": "myIcon",
+    "generateType": true,
+    "exportCompleteIconSet": true,
+    "optimizeForLazyLoading": true,
+    "modelFileName": "my-icon.model"
   }
 }
