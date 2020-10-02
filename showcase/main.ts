@@ -1,6 +1,8 @@
-import {completeIconSet, MobiIcon} from '../generated-icons/index';
+import {completeIconSet, MyIcon} from '../dist';
 
-function buildIconCard(icon: MobiIcon): HTMLDivElement {
+console.log('Complete set', completeIconSet);
+
+function buildIconCard(icon: MyIcon): HTMLDivElement {
     const iconCard = document.createElement('div');
     iconCard.classList.add('icon-card');
     iconCard.appendChild(buildSVGElement(icon));
@@ -8,7 +10,7 @@ function buildIconCard(icon: MobiIcon): HTMLDivElement {
     return iconCard;
 }
 
-function buildSVGElement(icon: MobiIcon): SVGElement {
+function buildSVGElement(icon: MyIcon): SVGElement {
     const div = document.createElement('DIV');
     div.innerHTML = icon.data;
     return (
@@ -18,15 +20,15 @@ function buildSVGElement(icon: MobiIcon): SVGElement {
 
 }
 
-function buildIconList(iconSet: MobiIcon[]) {
+function buildIconList(iconSet: MyIcon[]) {
     const iconList = document.querySelector('.icon-list');
     iconList.innerHTML = '';
-    iconSet.forEach((icon: MobiIcon) => iconList.appendChild(buildIconCard(icon)));
+    iconSet.forEach((icon: MyIcon) => iconList.appendChild(buildIconCard(icon)));
 }
 
 const searchField = document.querySelector('input');
 searchField.addEventListener('keydown', function (event: KeyboardEvent) {
-    const newIconSet = completeIconSet.filter((icon: MobiIcon) => (icon.name as string).includes(searchField.value));
+    const newIconSet = completeIconSet.filter((icon: MyIcon) => (icon.name as string).includes(searchField.value));
     buildIconList(newIconSet);
 });
 
