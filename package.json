@@ -1,5 +1,5 @@
 {
-  "name": "svg-icon-library-starter",
+  "name": "REPLACE_ME",
   "version": "1.0.0",
   "description": "Starter project to build an SVG icon library",
   "main": "index.js",
@@ -44,13 +44,13 @@
       "./svg-icons/**/*.svg"
     ],
     "outputDirectory": "./dist",
-    "interfaceName": "MyIcon",
-    "typeName": "myIcon",
-    "prefix": "myIcon",
+    "interfaceName": "REPLACE_ME",
+    "typeName": "REPLACE_ME",
+    "prefix": "REPLACE_ME",
     "generateType": true,
     "exportCompleteIconSet": true,
     "optimizeForLazyLoading": true,
-    "modelFileName": "my-icon.model",
+    "modelFileName": "REPLACE_ME.model",
     "compileSources": true
   }
 }
