@@ -4,13 +4,14 @@
   "description": "Starter project to build an SVG icon library",
   "main": "index.js",
   "scripts": {
-    "build": "svg-to-ts && npm run copy-assets",
-    "build:ts": "browserify showcase/main.ts -p [ tsify --noImplicitAny ] > showcase/main.js",
-    "copy-assets": "cpx package.json dist && cpx README.md dist",
+    "build:library": "npm run transform-icons && npm run copy-library-assets",
+    "build:showcase": "npm run build:library && npm run bundle-showcase && npm run copy-showcase-files",
+    "bundle-showcase": "webpack --config ./showcase/webpack.config.js",
     "commit": "git-cz",
-    "serve": "npm-run-all -p build watch-showcase serve-html",
-    "serve-html": "http-server ./showcase -o",
-    "watch-showcase": "tsc showcase/main.ts --watch"
+    "copy-showcase-files": "cpx showcase/index.html dist/showcase && cpx showcase/styles.css dist/showcase",
+    "copy-library-assets": "cpx package.json dist/icons && cpx README.md dist/icons",
+    "transform-icons": "svg-to-ts",
+    "serve": "npm run build:showcase && http-server ./dist/showcase -o"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   },
   "homepage": "https://github.com/kreuzerk/svg-icon-library-starter#readme",
   "devDependencies": {
+    "babel-loader": "^8.2.2",
     "browserify": "^16.5.2",
     "cpx": "^1.5.0",
     "git-cz": "^4.7.1",
@@ -36,14 +38,15 @@
     "svg-to-ts": "^6.0.0",
     "tsify": "^5.0.2",
     "typescript": "^4.0.3",
-    "typescript-bundle": "^1.0.16"
+    "typescript-bundle": "^1.0.16",
+    "webpack": "^3.12.0"
   },
   "svg-to-ts": {
     "conversionType": "files",
     "srcFiles": [
       "./svg-icons/**/*.svg"
     ],
-    "outputDirectory": "./dist",
+    "outputDirectory": "./dist/icons",
     "interfaceName": "REPLACE_ME",
     "typeName": "REPLACE_ME",
     "prefix": "REPLACE_ME",
