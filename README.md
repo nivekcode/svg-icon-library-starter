@@ -24,10 +24,9 @@ This is a startert project that helps you build your own awesome icon library fo
 ## Getting started
 
 1. Fork this repository
-2. Adjust the `name` inside the `package.json`.
-3. Adjust the `svg-to-ts` config inside the `.svg-to-tsrc` file. Change the following properties. `interfaceName`, `typeName`, `prefix` and the `modelFileName`.  👉 [Here](https://github.com/kreuzerk/svg-to-ts) you can find a detailed information about the meaning of those properties.
-4. Place all you SVG icons into the `svg-icons` folder.
-5. Open up a terminal and type `npm run serve`.
+2. Customize the project by running a full text search and replacing all "REPLACE_ME" occurrences.
+3. Place all you SVG icons into the `svg-icons` folder.
+4. Open up a terminal and type `npm run serve`.
 
 
 
