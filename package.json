@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Starter project to build an SVG icon library",
   "main": "index.js",
+  "sideEffects": false,
   "scripts": {
     "build:library": "npm run transform-icons && npm run copy-library-assets",
     "build:showcase": "npm run build:library && npm run bundle-showcase && npm run copy-showcase-files",
